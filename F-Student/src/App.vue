@@ -1,6 +1,5 @@
 <template>
     <calculator>
-
     </calculator>
 </template>
 
