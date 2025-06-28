@@ -44,6 +44,16 @@ export default {
             if (this.input_1 && this.operator && this.input_2) {
                 this.showResult = true;
             }
+            
+            if (!this.input_1) {
+                alert("Wadahelly? Put an input in the first input first my guy");
+            }
+            else if (!this.operator) {
+                alert("Give an operator before you proceed... NOW!");
+            }
+            else if (!this.input_2) {
+                alert("Oh my goodness complete the thing before you click calculate PLEASE");
+            }
 
             if (this.input_1 == 9 && this.operator == "+" && this.input_2 == 10) {
                 this.resultText = 'Result: 21'
@@ -58,7 +68,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .flex-center {
     display: flex;
     flex-direction: column;
@@ -70,7 +80,7 @@ export default {
     background: white;
     border: 1px solid rgb(225, 225, 225);
     border-radius: 20px;
-    box-shadow: 5px 5px;
+    box-shadow: 6px 6px;
 
     width: 16%;
     max-width: 20%;
