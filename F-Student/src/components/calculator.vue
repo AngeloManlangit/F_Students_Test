@@ -31,12 +31,13 @@
 
 <script>
 export default {
-    props: ['is21'],
     data() {
         return {
+            input_1: null,
+            input_2: null,
+            operator: '',
             resultText: '',
             showResult: false,
-            is21: false
         }
     },
     methods: {
@@ -57,8 +58,9 @@ export default {
 
             if (this.input_1 == 9 && this.operator == "+" && this.input_2 == 10) {
                 this.resultText = 'Result: 21'
-                this.showResult = true;
-                this.is21 = true;
+
+                // to say 21 is true in App.vue
+                this.$emit('show-21');
             }
             else {
                 this.resultText = 'Result: Hello World!'
