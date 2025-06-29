@@ -85,7 +85,7 @@ export default {
     width: 16%;
     max-width: 20%;
 
-    padding: 0px 10px;
+    padding: 0px 10px 3px;
     
     position: fixed;
     left: 42%;
@@ -108,7 +108,7 @@ export default {
 
 p {
     font-size: 18px;
-    margin: 0px auto 20px;
+    margin: 10px auto;
     text-align: center;
 }
 
