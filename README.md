@@ -1,16 +1,31 @@
-# F-Students-Routed
+# ANGELO MANLANGIT's CALCUTATOR
 
-This template should help get you started developing with Vue 3 in Vite.
+This might be the greatest calculator known to mankind
 
-## Recommended IDE Setup
+<img width="1873" height="877" alt="image" src="https://github.com/user-attachments/assets/13b5d49e-807a-4eed-bc68-3c36fd9b4c16" />
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+> **Fear** me if you *dare*
 
-## Customize configuration
+## Technologies Used
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Front-End
+- Vite
+- Vue.js
+- Pure, Handwritten CSS 💪
 
-## Project Setup
+### Back-End
+- Javascript
+- Node.js - to run the Vite build
+
+## Cloning & Running
+
+### Cloning the Git Repository
+
+```sh
+git clone https://github.com/AngeloManlangit/F_Students_Test.git
+```
+
+### Downloading the Dependencies
 
 ```sh
 npm install
@@ -27,3 +42,7 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### Easter Eggs
+
+FIND THEM YOURSELF!
