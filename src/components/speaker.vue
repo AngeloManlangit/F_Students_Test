@@ -1,7 +1,7 @@
 <template>
     <button
         @click.prevent="changeAudio()">
-        <img :src="audio[index].icon">
+        <img :src="audio[audio_index].icon">
     </button>
 </template>
 
@@ -11,12 +11,15 @@ import halfAudio from '../assets/speakerphone/half_audio.svg';
 import fullAudio from '../assets/speakerphone/full_audio.svg';
 import muteAudio from '../assets/speakerphone/mute_audio.svg';
 import fStudentAudioFile from '../assets/f_students_audio.mp3';
+import burningMemoryAudioFile from '../assets/Burning_memory.mp3';
 
 export default {
-    props: ["audio"],
+    props: {
+        file_index: Number,
+    },
     data() {
         return {
-            index: 0,
+            audio_index: 0,
             audio: [
                 {
                     icon: noAudio,
@@ -35,23 +38,34 @@ export default {
                     volume: 0
                 }
             ],
-            audioPlayer: null
+            audioPlayer: null,
+            file: [ fStudentAudioFile, burningMemoryAudioFile ],
         }
     },
     mounted() {
-        this.audioPlayer = new Audio(fStudentAudioFile);
+        this.audioPlayer = new Audio(this.file[this.file_index]);
+    },
+    watch: {
+        file_index(newIndex) {
+            if (this.audioPlayer) {
+                this.audioPlayer.pause();
+            }
+            
+            this.audioPlayer = new Audio(this.file[newIndex]);
+            this.audio_index = 0;
+        }
     },
     methods: {
         changeAudio() {
-            if (this.index == 0 || this.index >= 3) {
+            if (this.audio_index == 0 || this.audio_index >= 3) {
                 this.playAudio();
-                this.index = 1;
-                this.audioPlayer.volume = this.audio[this.index].volume / 100;
+                this.audio_index = 1;
+                this.audioPlayer.volume = this.audio[this.audio_index].volume / 100;
                 this.audioPlayer.loop = true;
             }
             else {
-                this.index++;
-                this.audioPlayer.volume = this.audio[this.index].volume / 100;
+                this.audio_index++;
+                this.audioPlayer.volume = this.audio[this.audio_index].volume / 100;
             }
         },
         playAudio() {

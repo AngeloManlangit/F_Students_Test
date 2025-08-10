@@ -1,5 +1,8 @@
 <template>
-    <div class="box flex-center">
+    <div 
+        class="box flex-center"
+        :class="[ reference69 ? JonClass : standardClass ]"
+    >
         <h1 
             style="text-align: center; margin: 10% auto 10px">
             🔥Calculator🔥</h1>
@@ -39,6 +42,9 @@ export default {
             operator: '',
             resultText: '',
             showResult: false,
+            reference69: false,
+            standardClass: 'standard',
+            JonClass: 'Jon'
         }
     },
     methods: {
@@ -65,9 +71,10 @@ export default {
                 // Emit value to parent, (event name, value)
                 this.$emit('set-easter-egg', 21);
             }
-            else if (this.input == 6 && this.operator == "*" && this.input_2 == 9) {
+            else if (this.input_1 == 6 && this.operator == "*" && this.input_2 == 9) {
                 // Jon Dela Cruz
                 this.resultText = 'Result: Haha funny number';
+                this.reference69 = true;
 
                 this.$emit('set-easter-egg', 69);
             }
@@ -87,8 +94,16 @@ export default {
     align-content: center;
 }
 
-.box {
+.standard {
     background: white;
+}
+
+.Jon {
+    background: url("../assets/images/Jon_cursed.jpg");
+    background-size: cover;
+}
+
+.box {
     border: 1px solid rgb(225, 225, 225);
     border-radius: 20px;
     box-shadow: 6px 6px;
